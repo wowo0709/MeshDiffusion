@@ -11,7 +11,7 @@ def get_config():
   training.sde = 'vpsde'
   training.continuous = False
   training.reduce_mean = True
-  training.batch_size = 8
+  training.batch_size = 4
   training.lip_scale = None
   training.iter_size = 4
 
@@ -37,7 +37,7 @@ def get_config():
 
   # model
   model = config.model
-  model.name = 'ddpm_res128_v2'
+  model.name = 'ddpm_res128'
   model.scale_by_sigma = False
   model.num_scales = 1000
   model.ema_rate = 0.9999
@@ -56,7 +56,7 @@ def get_config():
   optim = config.optim
   optim.lr = 7e-5 / training.iter_size * 2.0
 
-  config.eval.batch_size = 7
+  config.eval.batch_size = 4
   config.seed = 42
 
   return config

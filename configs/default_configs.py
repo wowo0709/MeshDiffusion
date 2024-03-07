@@ -39,6 +39,7 @@ def get_default_configs():
   evaluate.enable_loss = True
   evaluate.enable_bpd = False
   evaluate.bpd_dataset = 'test'
+  evaluate.eval_dir = "PLACEHOLDER"
   evaluate.ckpt_path = "PLACEHOLDER"
   evaluate.partial_dmtet_path = "PLACEHOLDER"
   evaluate.tet_path = "PLACEHOLDER"
@@ -80,7 +81,7 @@ def get_default_configs():
   optim.grad_clip = 1.
 
   config.seed = 42
-  config.device = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')
+  config.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
 
   # rendering
